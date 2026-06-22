@@ -342,7 +342,7 @@ footer .small{font-size:12px;color:var(--mid);letter-spacing:.04em;border-top:1p
 
   if(reduce) return;
 
-  var lenis=new Lenis({duration:1.25, easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));}, smoothWheel:true});
+  var lenis=new Lenis({lerp:0.2, wheelMultiplier:1, smoothWheel:true, syncTouch:false});
   function raf(t){ lenis.raf(t); requestAnimationFrame(raf); } requestAnimationFrame(raf);
   if(window.gsap && window.ScrollTrigger){
     gsap.registerPlugin(ScrollTrigger);
